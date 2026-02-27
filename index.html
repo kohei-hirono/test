@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>くじ引きアプリ</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>🎯 くじ引きアプリ</h1>
+      <p class="description">くじのプールを自由に編集して、ブラウザ上でくじを引けます。</p>
+
+      <section class="panel">
+        <h2>くじのプール設定</h2>
+        <p>1行に1つずつ入力してください（空行は無視されます）。</p>
+        <textarea id="poolInput" rows="10" aria-label="くじプール入力"></textarea>
+        <div class="actions">
+          <button id="savePoolButton" type="button">プールを保存</button>
+          <button id="resetPoolButton" type="button" class="secondary">初期値に戻す</button>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>くじを引く</h2>
+        <div class="actions">
+          <button id="drawButton" type="button">1回引く</button>
+          <button id="drawWithoutReplacementButton" type="button" class="secondary">重複なしで1回引く</button>
+          <button id="resetRemainingButton" type="button" class="secondary">残りプールをリセット</button>
+        </div>
+
+        <p id="result" class="result" aria-live="polite">ここに結果が表示されます。</p>
+        <p id="remainingCount" class="remaining"></p>
+
+        <h3>履歴</h3>
+        <ul id="history" class="history"></ul>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
